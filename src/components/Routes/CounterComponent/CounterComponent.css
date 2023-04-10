@@ -1,1 +1,14 @@
-/*  */
+.body
+{
+    color: antiquewhite;
+    background-color: black;
+    text-align: center;
+}
+table
+{
+    text-align: center;
+    align-items: center;
+    border:solid 2px black;
+    background-color: antiquewhite;
+    color: black;
+}

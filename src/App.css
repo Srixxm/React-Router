@@ -1,23 +1,38 @@
-.Apps{
+.app{
   padding:20px;
   align-items: center;
   text-align: center;
+  background-color: black;
+  color:bisque;
+  
 }
-.nav
+.nav1
 {
-  display: flex;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  
 }
 ul{
+  display: flex;
+  list-style-type: none;
+  overflow: hidden;
+  position: relative;
+  padding-left: 420px;
   text-decoration: none;
+  color: aliceblue;
 }
 ul li{
-  list-style: none;
-  text-decoration: none;
+  list-style-type: none;
   padding:25px;
-  border: solid 2px black;
+  border: solid 2px wheat;
+  color: black;
 }
 li:hover{
-  text-decoration: none;
+  
   background-color:blanchedalmond;
 }
-
+li
+{
+  padding: 10px;
+}

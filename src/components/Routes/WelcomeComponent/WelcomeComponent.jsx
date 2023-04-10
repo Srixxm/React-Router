@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
+import './WelcomeComponent.css';
 
 export class WelcomeComponent extends Component {
   constructor(props) {
@@ -29,8 +30,8 @@ export class WelcomeComponent extends Component {
     const {datapost,errormessage}=this.state
     return (
       <React.Fragment>
-        <div><b>Rick and Morty</b></div>
-        <div>
+        <div className='head'><b>Rick and Morty</b></div>
+        <div className='body'>
           {datapost.length?datapost.map(a => <div key={a.id}>{a.name}<br></br><img src={a.image} alt='loading..'></img></div>): null}
           {errormessage?<div>{errormessage}</div>:null}
         </div>

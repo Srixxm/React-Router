@@ -1,27 +1,91 @@
 import React from 'react'
+import { useState } from 'react'
+import './CalculatorComponent.css';
 
-function CalculatorComponent() {
-    //  addone()
-    // {
-        
-    // }
+export default function CalculatorComponent() {
+
+const [cal, setCal ] = useState("");
+const [result, setResult]=useState("");
+
+const ops =['/','*','-','-','+','.'];
+
+const updateCal = value =>{
+  if(ops.includes(value) && cal === '' || ops.includes(value) && ops.includes(cal.slice(-1)))
+  {
+    return ;
+  }
+
+  setCal(cal + value);
+
+  if (!ops.includes(value))
+  {
+    setResult(eval(cal + value).toString());
+  }
+
+
+}
+
+ /* const createDigits =() => {
+    const digits =[];
+    for (let i=1; i<10 ;i++)
+    {
+      digits.push(
+        <button key={i}>{i}</button>
+      )
+    }
+    return digits
+  }*/
+
+  const calculate = () => 
+  {
+    setCal(eval(cal).toString());
+  }
+
+  const Delete =() =>
+  {
+    if(cal == '')
+    {
+      return ;
+    }
+
+    const value= cal.slice(0, -1);
+    setCal(value);
+  }
   return (
     <React.Fragment>
-        <form >
-            <input type="text" name='answer'/><br></br>
+      <div className='APP'>
+      <div className='calc'>
+        <div className='display'>
+          {result ? <span>( {result} )</span> : null}&nbsp; { cal || "0"}
+        </div> 
+        <div className='op'>
+          <button onClick={() => updateCal('/')}>/</button>
+          <button onClick={() => updateCal('*')}>*</button>
+          <button onClick={() => updateCal('-')}>-</button>
+          <button onClick={() => updateCal('+')}>+</button>
+          
+          <button onClick={ Delete }>CLR</button>
+        </div>
 
-            <button name='one' value={1}>1</button>
-            <input type="button" name="One" value={2}/> 
-            <input type="button" name="One" value={3}/> <br></br> 
-            <input type="button" name="One" value={4}/> 
-            <input type="button" name="One" value={5}/> 
-            <input type="button" name="One" value={6}/> <br></br>
-            <input type="button" name="One" value={7}/> 
-            <input type="button" name="One" value={8}/> 
-            <input type="button" name="One" value={9}/> <br></br>
-            <input type="button" name="One" value={0}/> 
-        </form>
+        <div className="numbers">
+          <button onClick={() => updateCal('1')}>1</button>
+          <button onClick={() => updateCal('2')}>2</button>
+          <button onClick={() => updateCal('3')}>3</button><br></br>
+          <button onClick={() => updateCal('4')}>4</button>
+          <button onClick={() => updateCal('5')}>5</button>
+          <button onClick={() => updateCal('6')}>6</button><br></br>
+          <button onClick={() => updateCal('7')}>7</button>
+          <button onClick={() => updateCal('8')}>8</button>
+          <button onClick={() => updateCal('9')}>9</button><br></br>
+          
+          <button onClick={() => updateCal('0')}>0</button>
+          <button onClick={() => updateCal('.')}>.</button>
+          <button onClick={calculate}>=</button>
+
+
+        </div>
+      </div>
+      </div>
     </React.Fragment>
   )
 }
-export default CalculatorComponent

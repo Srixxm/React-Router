@@ -6,10 +6,10 @@ import WelcomeComponent from './components/Routes/WelcomeComponent/WelcomeCompon
 function App() {
   return (
     <Router>
-      <div className="App">
-          <h2>Welcome To Home Page</h2><br></br>
-          <ul className = "nav">
-            <li><Link to = "/Counter">Home   </Link></li>
+      <div className="app">
+          <h3>Welcome to Home</h3>
+          <ul className = "nav1">
+            <li><Link to = "/Counter">Home </Link></li>
             <li><Link to ="/Subscribe"> Calculator  </Link></li>
             <li><Link to ="/Welcome"> API  </Link></li>
           </ul>
