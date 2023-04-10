@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
-
+import {BrowserRouter as Router , Routes,Route,Link} from "react-router-dom";
+import CounterComponent from './components/Routes/CounterComponent/CounterComponent';
+import CalculatorComponent from './components/Routes/CalculatorComponent/CalculatorComponent';
+import WelcomeComponent from './components/Routes/WelcomeComponent/WelcomeComponent';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+          <h2>Welcome To Home Page</h2><br></br>
+          <ul className = "nav">
+            <li><Link to = "/Counter">Home   </Link></li>
+            <li><Link to ="/Subscribe"> Calculator  </Link></li>
+            <li><Link to ="/Welcome"> API  </Link></li>
+          </ul>
+        </div>
+
+        <Routes>
+          <Route exact path ="/Counter" element={<CounterComponent/>}> </Route>          
+          <Route exact path ="/Subscribe" element={<CalculatorComponent/>}> </Route>
+          <Route exact path ="/Welcome" element={<WelcomeComponent/>}> </Route>
+        </Routes>
+     
+      
+      
+    </Router>
+    
   );
 }
 
