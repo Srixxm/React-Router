@@ -1,7 +1,7 @@
 import React from 'react'
-import './CounterComponent.css';
+import './PortfolioComponent.css';
 
-function CounterComponent() {
+function PortfolioComponent() {
 
   return (
     <div className='body'>
@@ -53,4 +53,4 @@ function CounterComponent() {
   )
 }
 
-export default CounterComponent
+export default PortfolioComponent

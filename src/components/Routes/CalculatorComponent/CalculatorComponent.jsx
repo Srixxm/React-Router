@@ -7,10 +7,14 @@ export default function CalculatorComponent() {
 const [cal, setCal ] = useState("");
 const [result, setResult]=useState("");
 
-const ops =['/','*','-','-','+','.'];
+const ops =['/','*','-','+','.'];
 
 const updateCal = value =>{
-  if(ops.includes(value) && cal === '' || ops.includes(value) && ops.includes(cal.slice(-1)))
+  if(ops.includes(value) && cal === '' )
+  {
+    return ;
+  }
+  if(ops.includes(value) && ops.includes(cal.slice(-1)))
   {
     return ;
   }
@@ -19,6 +23,7 @@ const updateCal = value =>{
 
   if (!ops.includes(value))
   {
+    // eslint-disable-next-line
     setResult(eval(cal + value).toString());
   }
 
@@ -38,12 +43,13 @@ const updateCal = value =>{
 
   const calculate = () => 
   {
+    // eslint-disable-next-line
     setCal(eval(cal).toString());
   }
 
   const Delete =() =>
   {
-    if(cal == '')
+    if(cal === '')
     {
       return ;
     }
@@ -64,7 +70,7 @@ const updateCal = value =>{
           <button onClick={() => updateCal('-')}>-</button>
           <button onClick={() => updateCal('+')}>+</button>
           
-          <button onClick={ Delete }>CLR</button>
+          <button onClick={ Delete }>DEL</button>
         </div>
 
         <div className="numbers">

@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { Component } from 'react'
-import './WelcomeComponent.css';
+import './ApiaxiosComponent.css';
 
-export class WelcomeComponent extends Component {
+export class ApiaxiosComponent extends Component {
   constructor(props) {
     super(props)
   
@@ -40,4 +40,4 @@ export class WelcomeComponent extends Component {
   }
 }
 
-export default WelcomeComponent
+export default ApiaxiosComponent
