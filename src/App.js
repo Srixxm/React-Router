@@ -9,16 +9,16 @@ function App() {
       <div className="app">
           <h3>Welcome to Home</h3>
           <ul className = "nav1">
-            <li><Link to = "/Portfolio">Home </Link></li>
+            <li><Link to = "/Portfolio">Portfolio</Link></li>
             <li><Link to ="/Calculator"> Calculator  </Link></li>
-            <li><Link to ="/Welcome"> API  </Link></li>
+            <li><Link to ="/APIaxios"> API  </Link></li>
           </ul>
         </div>
 
         <Routes>
           <Route exact path ="/Portfolio" element={<PortfolioComponent/>}> </Route>          
           <Route exact path ="/Calculator" element={<CalculatorComponent/>}> </Route>
-          <Route exact path ="/Welcome" element={<ApiaxiosComponent/>}> </Route>
+          <Route exact path ="/APIaxios" element={<ApiaxiosComponent/>}> </Route>
         </Routes>
      
       
